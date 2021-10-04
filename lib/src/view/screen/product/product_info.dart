@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapp/src/core/app_colors.dart';
 import 'package:pokeapp/src/core/app_images.dart';
-import 'package:pokeapp/src/view/widget/app_bar_product.dart';
+import 'package:pokeapp/src/view/widget/app_bar_product_widget.dart';
 import 'package:pokeapp/src/view/widget/button_widget.dart';
 import 'package:pokeapp/src/view/widget/card_type_widget.dart';
 
@@ -87,6 +87,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
             backgroundColor: Colors.white.withOpacity(0.1),
             iconSize: 18,
             fontSize: 14,
+            onPressed: () {}
           ),
         ],
       ),
