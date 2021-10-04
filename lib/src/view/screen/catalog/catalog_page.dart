@@ -42,7 +42,8 @@ class CatalogPage extends StatelessWidget {
             backgroundColor: AppColors.primary,
             fontColor: Colors.white,
             iconSize: 16,
-            fontSize: 14
+            fontSize: 14,
+            onPressed: () {}
           ),
           SizedBox(height: 14),
           ListCardWidget()
