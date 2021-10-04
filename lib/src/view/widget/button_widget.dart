@@ -11,11 +11,11 @@ class ButtonWidget extends StatelessWidget {
 
   const ButtonWidget({
     Key? key, 
-    required this.textButton,
     this.fontSize = 14,
     this.iconSize = 20,
-    required this.icon,
     this.backgroundColor = Colors.transparent,
+    required this.textButton,
+    required this.icon,
     required this.fontColor,
   }) : super(key: key);
 
@@ -32,7 +32,7 @@ class ButtonWidget extends StatelessWidget {
           backgroundColor: this.backgroundColor,
       ),
       icon: Icon(
-        Icons.filter,
+        this.icon,
         color: this.fontColor,
         size: this.iconSize,
       ),
