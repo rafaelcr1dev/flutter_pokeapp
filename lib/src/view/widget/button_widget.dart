@@ -27,7 +27,7 @@ class ButtonWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 14),
           side: BorderSide(
             width: 1.0, 
-            color: this.fontColor,
+            color: this.backgroundColor,
           ),
           backgroundColor: this.backgroundColor,
       ),
