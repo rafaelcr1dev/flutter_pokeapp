@@ -5,7 +5,7 @@ class CardTypeWidget extends StatelessWidget {
   const CardTypeWidget({
     required this.typeText,
     this.large = true,
-    this.colored = true,
+    this.colored = false,
   }) : super();
 
   final String typeText;
@@ -21,9 +21,10 @@ class CardTypeWidget extends StatelessWidget {
           horizontal: 19,
           vertical: 6,
         ),
+        margin: EdgeInsets.only(right: 4, bottom: 4),
         decoration: ShapeDecoration(
           shape: StadiumBorder(),
-          color: (AppColors.primary).withOpacity(0.1),
+          color: colored ? (AppColors.primary).withOpacity(0.1) : (Colors.white).withOpacity(0.1),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
