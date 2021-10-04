@@ -17,7 +17,8 @@ class TitlePageWidget extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
-                  color: AppColors.secondary),
+                  color: AppColors.secondary,
+              ),
             )
           ],
         )
