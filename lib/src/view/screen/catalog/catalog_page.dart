@@ -7,12 +7,7 @@ import 'package:pokeapp/src/view/widget/title_page_widget.dart';
 import 'package:pokeapp/src/view/widget/total_results_widget.dart';
 
 class CatalogPage extends StatelessWidget {
-
-
-
-
   const CatalogPage ({ Key? key }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
