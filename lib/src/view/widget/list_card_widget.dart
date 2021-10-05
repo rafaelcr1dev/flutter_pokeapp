@@ -13,6 +13,10 @@ class _ListCardWidgerState extends State<ListCardWidget> {
   Widget build(BuildContext context) {
     return Expanded(
             child: GridView.count(
+              padding: EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 10,
+              ),
               crossAxisSpacing: 16,
               mainAxisSpacing: 16,
               crossAxisCount: 2,
