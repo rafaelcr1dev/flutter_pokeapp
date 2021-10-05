@@ -36,14 +36,32 @@ class CatalogPage extends StatelessWidget {
             total: 20
           ),
           SizedBox(height: 14),
-          ButtonWidget(
-            textButton: "Filtrar",
-            icon: Icons.filter,
-            backgroundColor: AppColors.primary,
-            fontColor: Colors.white,
-            iconSize: 16,
-            fontSize: 14,
-            onPressed: () {}
+          TextField(
+            style: TextStyle(fontSize: 14.0, color: AppColors.secondary),
+            autofocus: false,
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(50)
+                ),
+                borderSide: BorderSide(
+                  color: AppColors.secondary.withOpacity(0.2),
+                  width: 1
+                )
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColors.primary,
+                  width: 0
+                ),
+                borderRadius: BorderRadius.circular(50),
+              ),
+              focusColor: AppColors.primary,
+              hintText: 'Buscar...',
+              prefixIcon: Icon(Icons.search, color: AppColors.primary),
+            ),
           ),
           SizedBox(height: 14),
           ListCardWidget()
