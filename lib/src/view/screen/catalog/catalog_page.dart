@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapp/src/core/app_colors.dart';
 import 'package:pokeapp/src/view/widget/app_bar_widget.dart';
-import 'package:pokeapp/src/view/widget/button_widget.dart';
 import 'package:pokeapp/src/view/widget/list_card_widget.dart';
-import 'package:pokeapp/src/view/widget/title_page_widget.dart';
-import 'package:pokeapp/src/view/widget/total_results_widget.dart';
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage ({ Key? key }) : super(key: key);
@@ -23,31 +20,28 @@ class CatalogPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBarWidget(),
       body: Container(
+        color: Colors.white,
         padding: const EdgeInsets.symmetric(
           horizontal: 14,
-          vertical: 10,
+          vertical: 0,
         ),
         child: Column(children: <Widget>[ 
-          TitlePageWidget(
-            titleText: "Pokemons"
-          ),
           SizedBox(height: 4),
-          TotalResultsWidget(
-            total: 20
-          ),
-          SizedBox(height: 14),
           TextField(
-            style: TextStyle(fontSize: 14.0, color: AppColors.secondary),
+            style: TextStyle(
+              fontSize: 14.0, 
+              color: Colors.white,
+            ),
             autofocus: false,
             decoration: InputDecoration(
               filled: true,
-              fillColor: Colors.white,
+              fillColor: AppColors.lightGrey,
               enabledBorder: OutlineInputBorder(
                 borderRadius: const BorderRadius.all(
                   Radius.circular(50)
                 ),
                 borderSide: BorderSide(
-                  color: AppColors.secondary.withOpacity(0.2),
+                  color: AppColors.white.withOpacity(0.2),
                   width: 1
                 )
               ),
