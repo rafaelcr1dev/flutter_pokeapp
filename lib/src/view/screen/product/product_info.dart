@@ -25,7 +25,12 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
   Widget _pokemonInfosAndImage() {
     return Container(
       color: AppColors.primary,
-      padding: EdgeInsets.all(14),
+      padding: EdgeInsets.only(
+        left: 14, 
+        right: 14, 
+        bottom: 14, 
+        top: 0,
+      ),
       child: Column(
         children: <Widget>[
           Row(children: [
