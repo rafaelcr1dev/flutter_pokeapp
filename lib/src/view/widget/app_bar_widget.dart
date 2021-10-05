@@ -13,7 +13,13 @@ class AppBarWidget extends PreferredSize{
               padding: const EdgeInsets.only(left: 10),
               child: Image.asset(AppImages.logo),
             ),
-            backgroundColor: Colors.transparent,
+            title: new Text(
+              "Olá visitante de Barueri, SP", 
+              style: TextStyle(
+                fontSize: 12,
+                color: AppColors.secondary.withOpacity(0.4),
+              ),),
+            backgroundColor: Colors.white,
             bottomOpacity: 0.0,
             elevation: 0.0,
             actions: [
