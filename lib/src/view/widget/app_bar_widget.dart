@@ -8,6 +8,7 @@ class AppBarWidget extends PreferredSize{
           preferredSize: Size.fromHeight(54),
           child: AppBar(
             shadowColor: AppColors.white,
+            leadingWidth: 70,
             leading: Container(
               padding: const EdgeInsets.only(left: 10),
               child: Image.asset(AppImages.logo),
