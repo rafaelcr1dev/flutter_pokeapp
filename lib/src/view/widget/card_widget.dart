@@ -12,7 +12,7 @@ class CardWidget extends StatelessWidget {
       right: 4,
       child: Image.asset(
         AppImages.pokemon,
-        width: 90,
+        width: 80,
       ),
     );
   }
@@ -22,7 +22,7 @@ class CardWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 4),
       child: CardTypeWidget(
         typeText: "Tipo",
-        colored: false
+        colored: true
       ),
     );
   }
@@ -49,7 +49,7 @@ class CardWidget extends StatelessWidget {
                     fontSize: 14,
                     height: 1.4,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white.withOpacity(0.9),
+                    color: AppColors.secondary,
                   ),
                 ),
               ),
@@ -67,20 +67,20 @@ class CardWidget extends StatelessWidget {
       onTap: () => {},
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
-              color: AppColors.lightGrey.withOpacity(0.12),
-              blurRadius: 30,
-              offset: Offset(0, 8),
+              color: AppColors.secondary.withOpacity(0.1),
+              blurRadius: 8,
+              offset: Offset(2, 2),
             ),
           ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Material(
-            color: AppColors.secondary,
+            color: AppColors.secondary.withOpacity(0.03),
             child: InkWell(
               onTap: () => {},
               splashColor: Colors.white10,
