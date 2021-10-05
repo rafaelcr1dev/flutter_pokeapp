@@ -22,6 +22,7 @@ class CardWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 4),
       child: CardTypeWidget(
         typeText: "Tipo",
+        colored: false
       ),
     );
   }
@@ -48,7 +49,7 @@ class CardWidget extends StatelessWidget {
                     fontSize: 14,
                     height: 1.4,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.secondary,
+                    color: Colors.white.withOpacity(0.9),
                   ),
                 ),
               ),
@@ -66,7 +67,7 @@ class CardWidget extends StatelessWidget {
       onTap: () => {},
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.lightGrey,
+          color: AppColors.primary,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
@@ -79,7 +80,7 @@ class CardWidget extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Material(
-            color: AppColors.lightGrey,
+            color: AppColors.secondary,
             child: InkWell(
               onTap: () => {},
               splashColor: Colors.white10,
