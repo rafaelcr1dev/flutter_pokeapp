@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapp/src/core/app_colors.dart';
 import 'package:pokeapp/src/core/app_images.dart';
+import 'package:pokeapp/src/view/screen/cart/cart_page.dart';
 import 'package:pokeapp/src/view/widget/app_bar_product_widget.dart';
 import 'package:pokeapp/src/view/widget/button_widget.dart';
 import 'package:pokeapp/src/view/widget/card_type_widget.dart';
@@ -26,27 +27,28 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
     return Container(
       color: AppColors.primary,
       padding: EdgeInsets.only(
-        left: 14, 
-        right: 14, 
-        bottom: 14, 
+        left: 14,
+        right: 14,
+        bottom: 14,
         top: 0,
       ),
       child: Column(
         children: <Widget>[
-          Row(children: [
+          Row(
+            children: [
               Expanded(
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Bubazauro",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          height: 1.4,
-                          color: Colors.white,
-                        ),
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Bubazauro",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        height: 1.4,
+                        color: Colors.white,
                       ),
+                    ),
                   ],
                 ),
               ),
@@ -70,30 +72,42 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
             ],
           ),
           Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AppImages.pokemon,
-                        alignment: Alignment.center,
-                        width: 200,
-                      ),
-                    ],
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    AppImages.pokemon,
+                    alignment: Alignment.center,
+                    width: 200,
                   ),
-              ],
+                ],
+              ),
+            ],
           ),
           ButtonWidget(
-            textButton: "Adicionar no carrinho",
-            icon: Icons.shopping_cart,
-            fontColor: Colors.white,
-            backgroundColor: Colors.white.withOpacity(0.1),
-            iconSize: 18,
-            fontSize: 14,
-            onPressed: () {}
-          ),
+              textButton: "Adicionar no carrinho",
+              icon: Icons.shopping_cart,
+              fontColor: Colors.white,
+              backgroundColor: Colors.white.withOpacity(0.1),
+              iconSize: 18,
+              fontSize: 14,
+              onPressed: () {
+                const snackBar = SnackBar(
+                  content: Text('Adicionado no carrinho!'),
+                );
+
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(),
+                  ),
+                );
+              }),
         ],
       ),
     );
@@ -102,9 +116,9 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
   Widget _pokemonAbout() {
     return Container(
       padding: EdgeInsets.only(
-        right: 14, 
-        left: 14, 
-        top: 40, 
+        right: 14,
+        left: 14,
+        top: 40,
         bottom: 40,
       ),
       child: Column(
@@ -115,7 +129,7 @@ class _ProductInfoPageState extends State<ProductInfoPage> {
                 child: Wrap(
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start, 
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Sobre",

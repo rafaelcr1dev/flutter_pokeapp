@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapp/src/core/app_colors.dart';
 import 'package:pokeapp/src/core/app_images.dart';
+import 'package:pokeapp/src/view/screen/product/product_info.dart';
 import 'package:pokeapp/src/view/widget/card_type_widget.dart';
 
 class CardWidget extends StatelessWidget {
@@ -20,10 +21,7 @@ class CardWidget extends StatelessWidget {
   Widget _pokemonTypes() {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 4),
-      child: CardTypeWidget(
-        typeText: "Tipo",
-        colored: true
-      ),
+      child: CardTypeWidget(typeText: "Tipo", colored: true),
     );
   }
 
@@ -44,7 +42,7 @@ class CardWidget extends StatelessWidget {
               Hero(
                 tag: "#001 - Bubazauro",
                 child: Text(
-                  "Bubazauro",
+                  "Bubazauro12",
                   style: TextStyle(
                     fontSize: 14,
                     height: 1.4,
@@ -64,7 +62,14 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductInfoPage(),
+          ),
+        );
+      },
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.white,
@@ -81,16 +86,11 @@ class CardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           child: Material(
             color: AppColors.secondary.withOpacity(0.03),
-            child: InkWell(
-              onTap: () => {},
-              splashColor: Colors.white10,
-              highlightColor: Colors.white10,
-              child: Stack(
-                children: [
-                  _pokemonImage(),
-                  _pokemonContent(),
-                ],
-              ),
+            child: Stack(
+              children: [
+                _pokemonImage(),
+                _pokemonContent(),
+              ],
             ),
           ),
         ),

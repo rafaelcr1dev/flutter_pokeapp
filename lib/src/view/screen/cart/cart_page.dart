@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapp/src/core/app_colors.dart';
+import 'package:pokeapp/src/view/screen/catalog/catalog_page.dart';
 import 'package:pokeapp/src/view/widget/app_bar_widget.dart';
 import 'package:pokeapp/src/view/widget/button_widget.dart';
 import 'package:pokeapp/src/view/widget/item_widget.dart';
@@ -19,21 +20,22 @@ class CartPage extends StatelessWidget {
           horizontal: 14,
           vertical: 10,
         ),
-        child: Column(children: <Widget>[
-          TitlePageWidget(titleText: "Carrinho"),
-          SizedBox(height: 4),
-          TotalResultsWidget(total: 20),
-          SizedBox(height: 14),
-          Expanded(
-              child: ListView.builder(
-            itemCount: 20,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return ItemWidget(item: "");
-            },
-          )),
-          SizedBox(height: 14),
-          ButtonWidget(
+        child: Column(
+          children: <Widget>[
+            TitlePageWidget(titleText: "Carrinho"),
+            SizedBox(height: 4),
+            TotalResultsWidget(total: 20),
+            SizedBox(height: 14),
+            Expanded(
+                child: ListView.builder(
+              itemCount: 20,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return ItemWidget(item: "");
+              },
+            )),
+            SizedBox(height: 14),
+            ButtonWidget(
               textButton: "Finalizar pedido",
               icon: Icons.shopping_cart,
               backgroundColor: AppColors.primary,
@@ -46,9 +48,17 @@ class CartPage extends StatelessWidget {
                   builder: (BuildContext context) {
                     return ModalWidget(
                       title: "Pedido finalizado",
-                      description: "O número do seu pedido é #010101",
+                      description:
+                          "Obrigado pela compra, o número do seu pedido é #010101",
                       textButton: "Ir para a página inicial",
-                      onPressedCallback: () => Navigator.pop(context),
+                      onPressedCallback: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CatalogPage(),
+                          ),
+                        );
+                      },
                     );
                   },
                 );
