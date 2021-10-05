@@ -21,10 +21,10 @@ class CardTypeWidget extends StatelessWidget {
           horizontal: 19,
           vertical: 6,
         ),
-        margin: EdgeInsets.only(right: 4, bottom: 4),
+        margin: EdgeInsets.only(right: 4, bottom: 0),
         decoration: ShapeDecoration(
           shape: StadiumBorder(),
-          color: colored ? (AppColors.primary).withOpacity(0.1) : (Colors.white).withOpacity(0.1),
+          color: colored ? (AppColors.primary) : (Colors.white).withOpacity(0.1),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -37,7 +37,7 @@ class CardTypeWidget extends StatelessWidget {
                 height: 0.8,
                 fontWeight: large ? FontWeight.bold : FontWeight.normal,
                 color:
-                    colored ? AppColors.primary.withOpacity(0.3) : Colors.white,
+                    Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
