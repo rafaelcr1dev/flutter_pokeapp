@@ -10,32 +10,33 @@ class ModalWidget extends StatelessWidget {
   final String textButton;
   final GestureTapCallback onPressedCallback;
 
-  const ModalWidget({
-      Key? key,
+  const ModalWidget(
+      {Key? key,
       this.icon = Icons.check_circle,
       this.hasIcon = true,
       required this.title,
       required this.description,
       required this.textButton,
-      required this.onPressedCallback
-  }) : super(key: key);
+      required this.onPressedCallback})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(14),
-      height: 200,
       color: Colors.white,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            this.hasIcon ? Icon(
-              Icons.check_circle,
-              color: Colors.lightGreen,
-              size: 30,
-            ) : Text(""),
+            this.hasIcon
+                ? Icon(
+                    Icons.check_circle,
+                    color: Colors.lightGreen,
+                    size: 30,
+                  )
+                : Text(""),
             SizedBox(height: 6),
             Text(
               this.title,
@@ -53,6 +54,7 @@ class ModalWidget extends StatelessWidget {
                 height: 1.4,
                 color: AppColors.secondary.withOpacity(0.6),
               ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 14),
             ButtonWidget(
