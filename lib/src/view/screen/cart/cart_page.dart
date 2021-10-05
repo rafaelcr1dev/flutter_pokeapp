@@ -14,7 +14,9 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(
+        hasBackButton: true,
+      ),
       body: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 14,
