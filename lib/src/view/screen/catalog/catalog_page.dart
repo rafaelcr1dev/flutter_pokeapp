@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pokeapp/src/core/app_colors.dart';
+import 'package:pokeapp/src/core/models/todo/todo.model.dart';
+import 'package:pokeapp/src/shared/stores/todo/todo.store.dart';
 import 'package:pokeapp/src/view/widget/app_bar_widget.dart';
+import 'package:pokeapp/src/view/widget/button_widget.dart';
 import 'package:pokeapp/src/view/widget/list_card_widget.dart';
+
+final todoStore = TodoStore();
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({Key? key}) : super(key: key);
@@ -50,7 +55,23 @@ class CatalogPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 14),
-            ListCardWidget()
+            ButtonWidget(
+              textButton: "Finalizar pedido",
+              icon: Icons.shopping_cart,
+              backgroundColor: AppColors.primary,
+              fontColor: Colors.white,
+              iconSize: 16,
+              fontSize: 14,
+              onPressed: () {
+                var todo = new Todo(
+                  id: 1,
+                  title: "Testando",
+                  done: false,
+                );
+                todoStore.add(todo);
+              },
+            ),
+            ListCardWidget(),
           ])),
     );
   }
