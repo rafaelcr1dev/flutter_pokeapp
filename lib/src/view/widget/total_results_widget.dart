@@ -21,7 +21,7 @@ class _TotalResultsWidgetState extends State<TotalResultsWidget> {
               "Foram encontrado(s) ${widget.total} resultado(s)",
               style: TextStyle(
                 fontSize: 14,
-                color: AppColors.secondary,
+                color: AppColors.secondary.withOpacity(0.6),
               ),
             )
           ],
